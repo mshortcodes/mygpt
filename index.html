@@ -6,12 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>MyGPT</title>
 	</head>
-	<body>
+	<body class="bg-neutral-800">
 		<header
-			class="sticky top-0 z-50 flex items-center justify-between border-b border-red-500">
-			<button>
+			class="sticky top-0 z-50 flex items-center justify-between border-b border-neutral-600 p-2 md:justify-normal md:border-none">
+			<button class="p-2 md:hidden">
 				<svg
-					class="w-10 text-green-400"
+					class="w-8 text-neutral-50"
 					viewBox="0 0 24 24"
 					fill="currentColor"
 					xmlns="http://www.w3.org/2000/svg">
@@ -22,13 +22,14 @@
 						fill="currentColor"></path>
 				</svg>
 			</button>
-			<div class="flex">
-				<h1>MyGPT</h1>
-				<span>3.5</span>
+			<div class="flex p-2 md:order-2">
+				<h1 class="px-1 text-2xl font-bold text-neutral-50">MyGPT</h1>
+				<span class="text-2xl font-bold text-neutral-400">3.5</span>
 			</div>
-			<button>
+			<button
+				class="rounded-xl border-neutral-600 p-2 md:order-1 md:ml-2 md:border">
 				<svg
-					class="w-10 text-red-500"
+					class="w-8 text-neutral-50 md:w-6"
 					viewBox="0 0 24 24"
 					fill="currentColor"
 					xmlns="http://www.w3.org/2000/svg">
@@ -40,6 +41,7 @@
 				</svg>
 			</button>
 		</header>
+
 		<script type="module" src="./src/main.js"></script>
 	</body>
 </html>
