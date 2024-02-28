@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>MyGPT</title>
 	</head>
-	<body class="h-screen bg-neutral-800">
+	<body class="flex h-screen flex-col bg-neutral-800">
 		<header
 			class="sticky top-0 z-50 flex items-center justify-between border-b border-neutral-600 p-2 md:justify-normal md:border-none">
 			<button class="p-2 md:hidden">
@@ -42,7 +42,7 @@
 			</button>
 		</header>
 
-		<main class="flex h-4/5 flex-col items-center justify-center">
+		<main class="flex flex-1 flex-col items-center justify-center">
 			<div
 				class="flex h-16 w-16 justify-center rounded-full bg-neutral-50">
 				<svg
@@ -57,7 +57,7 @@
 						fill="currentColor"></path>
 				</svg>
 			</div>
-			<h2 class="p-4 text-2xl font-semibold text-neutral-50">
+			<h2 class="p-4 text-4xl font-semibold text-neutral-50">
 				How can I help you today?
 			</h2>
 			<div class="hidden self-start p-4 md:flex">
@@ -75,14 +75,22 @@
 			</div>
 		</main>
 
-		<section class="p-4">
-			<form action="" class="">
+		<section class="2xl mx-auto w-full px-4 lg:w-3/4 xl:w-3/5">
+			<form action="" class="flex justify-center">
 				<textarea
+					rows="1"
 					name=""
-					class="w-full resize-none overflow-hidden rounded-2xl p-2 text-xl"
+					class="w-full resize-none overflow-hidden rounded-2xl border border-neutral-600 bg-neutral-800 p-4 text-xl text-neutral-50 outline-none placeholder:text-neutral-400 focus:border-neutral-400"
 					placeholder="Message MyGPT..."></textarea>
 			</form>
 		</section>
+
+		<footer class="px-4 py-2">
+			<p class="my-auto text-center text-neutral-400">
+				MyGPT can make mistakes. Consider checking important
+				information.
+			</p>
+		</footer>
 
 		<script type="module" src="./src/main.js"></script>
 	</body>
