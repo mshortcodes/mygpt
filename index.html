@@ -8,7 +8,7 @@
 	</head>
 
 	<body class="flex h-screen bg-neutral-800">
-		<aside class="z-50 hidden h-full md:flex">
+		<aside class="z-50 hidden h-full">
 			<div class="h-full w-80 bg-neutral-900 p-4 text-neutral-50">
 				<div class="flex justify-between">
 					<div class="flex items-center">
@@ -68,6 +68,7 @@
 					<span class="text-2xl font-bold text-neutral-400">3.5</span>
 				</div>
 				<button
+					id="newChatBtn"
 					aria-label="new chat button"
 					class="rounded-xl border-neutral-600 p-2 md:order-1 md:ml-2 md:border">
 					<svg
@@ -100,11 +101,13 @@
 					</svg>
 				</div>
 				<h2
-					class="p-4 text-center text-4xl font-semibold text-neutral-50">
+					class="p-4 text-center text-4xl font-semibold text-neutral-50 md:px-16">
 					How can I help you today?
 				</h2>
 				<div class="absolute hidden self-start p-4 md:flex">
-					<button aria-label="open sidebar button">
+					<button
+						id="openSidebarBtn"
+						aria-label="open sidebar button">
 						<svg
 							class="w-4 text-neutral-400"
 							xmlns="http://www.w3.org/2000/svg"
@@ -113,6 +116,20 @@
 							<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
 							<path
 								d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+						</svg>
+					</button>
+					<button
+						class="hidden"
+						id="closeSidebarBtn"
+						aria-label="close sidebar button">
+						<svg
+							class="w-4 text-neutral-400"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 320 512"
+							fill="currentColor">
+							<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+							<path
+								d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
 						</svg>
 					</button>
 				</div>
