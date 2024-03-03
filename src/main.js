@@ -1,10 +1,12 @@
 import './style.css';
 import { textareaHeight } from './textareaHeight';
-import { sidebar } from './sidebar';
+import { setupSidebar } from './setupSidebar';
 import { getMessage } from './getMessage';
+import { setupMobileSidebar } from './setupMobileSidebar';
 
 textareaHeight();
-sidebar();
+setupSidebar();
+setupMobileSidebar();
 
 const submitBtn = document.getElementById('submitBtn');
 submitBtn.addEventListener('click', getMessage);
