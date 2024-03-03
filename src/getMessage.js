@@ -1,6 +1,9 @@
 import { config } from '../config';
 
 const API_KEY = config.API_KEY;
+const textarea = document.querySelector('textarea');
+const input = document.querySelector('#input');
+const output = document.querySelector('#output');
 
 export const getMessage = async () => {
 	const options = {
@@ -14,10 +17,10 @@ export const getMessage = async () => {
 			messages: [
 				{
 					role: 'user',
-					content: 'Hello!',
+					content: textarea.value,
 				},
 			],
-			max_tokens: 10,
+			max_tokens: 100,
 		}),
 	};
 
@@ -27,7 +30,13 @@ export const getMessage = async () => {
 			options,
 		);
 		const data = await response.json();
-		console.log(data);
+		if (data.choices[0].message.content) {
+			input.textContent = textarea.value;
+		}
+		output.innerHTML = data.choices[0].message.content.replace(
+			/\n/g,
+			'<br>',
+		);
 	} catch (error) {
 		console.error(error);
 	}
