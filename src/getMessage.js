@@ -31,7 +31,9 @@ export const getMessage = async () => {
 		);
 		const data = await response.json();
 		if (data.choices[0].message.content) {
-			input.textContent = textarea.value;
+			let previousValue = textarea.value;
+			input.textContent = previousValue;
+			textarea.value = '';
 		}
 		output.innerHTML = data.choices[0].message.content.replace(
 			/\n/g,

@@ -154,8 +154,10 @@
 				</button>
 			</header>
 
-			<main class="flex flex-1 flex-col items-center justify-center">
+			<main
+				class="relative flex flex-1 flex-col items-center justify-center">
 				<div
+					id="mainLogo"
 					class="flex h-16 w-16 justify-center rounded-full bg-neutral-50">
 					<svg
 						viewBox="0 0 41 41"
@@ -175,7 +177,8 @@
 					How can I help you today?
 				</h2>
 
-				<div class="absolute hidden self-start p-4 md:flex">
+				<div
+					class="absolute left-0 top-1/2 hidden -translate-y-1/2 p-4 md:flex">
 					<button
 						id="openSidebarBtn"
 						aria-label="open sidebar button">
@@ -206,14 +209,14 @@
 				</div>
 
 				<div
-					class="mx-auto w-11/12 px-4 text-lg text-neutral-50 lg:w-3/4 xl:w-3/5">
+					class="bubble mx-auto hidden w-11/12 px-4 text-lg text-neutral-50 lg:w-3/4 xl:w-3/5">
 					<div class="flex">
 						<div
-							class="flex h-8 w-8 justify-center rounded-full bg-neutral-950">
+							class="flex h-8 w-8 justify-center rounded-full bg-neutral-50">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 448 512"
-								class="w-4 text-sky-500"
+								class="w-4 text-red-600"
 								fill="currentColor">
 								<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
 								<path
@@ -226,7 +229,7 @@
 				</div>
 
 				<div
-					class="mx-auto w-11/12 px-4 text-lg text-neutral-50 lg:w-3/4 xl:w-3/5">
+					class="bubble mx-auto hidden w-11/12 px-4 text-lg text-neutral-50 lg:w-3/4 xl:w-3/5">
 					<div class="flex">
 						<div
 							class="flex h-8 w-8 justify-center rounded-full bg-emerald-500">
