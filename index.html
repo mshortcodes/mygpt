@@ -96,8 +96,7 @@
 						class="w-6 text-neutral-50"
 						viewBox="0 0 24 24"
 						fill="currentColor"
-						xmlns="http://www.w3.org/2000/svg"
-						class="icon-md">
+						xmlns="http://www.w3.org/2000/svg">
 						<path
 							d="M6.34315 6.34338L17.6569 17.6571M17.6569 6.34338L6.34315 17.6571"
 							stroke="currentColor"
@@ -225,7 +224,7 @@
 						</div>
 						<h3 class="px-4">You</h3>
 					</div>
-					<p class="mb-10 px-12" id="input">hi</p>
+					<p class="mb-10 px-12" id="input"></p>
 				</div>
 
 				<div
@@ -247,7 +246,7 @@
 						</div>
 						<h3 class="px-4">MyGPT</h3>
 					</div>
-					<p class="px-12" id="output">hi</p>
+					<p class="px-12" id="output"></p>
 				</div>
 			</main>
 
@@ -256,12 +255,13 @@
 					<textarea
 						rows="1"
 						name=""
-						class="w-full resize-none overflow-hidden rounded-2xl border border-neutral-600 bg-neutral-800 p-4 pr-14 text-xl text-neutral-50 outline-none ring-neutral-600 placeholder:text-neutral-400 focus:ring-1"
+						class="w-full resize-none overflow-hidden rounded-2xl border border-neutral-600 bg-neutral-900 p-4 pr-14 text-xl text-neutral-50 outline-none ring-neutral-600 placeholder:text-neutral-400 focus:ring-1"
 						placeholder="Message MyGPT..."></textarea>
 					<button
+						disabled
 						id="submitBtn"
 						aria-label="submit message button"
-						class="absolute bottom-3 right-3 rounded-xl bg-neutral-50 p-1">
+						class="absolute bottom-3 right-3 rounded-xl bg-neutral-50 p-1 opacity-10">
 						<svg
 							class="w-8 text-neutral-950"
 							viewBox="0 0 24 24"

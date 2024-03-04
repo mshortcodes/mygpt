@@ -4,6 +4,7 @@ const API_KEY = config.API_KEY;
 const textarea = document.querySelector('textarea');
 const input = document.querySelector('#input');
 const output = document.querySelector('#output');
+const submitBtn = document.getElementById('submitBtn');
 
 export const getMessage = async () => {
 	const options = {
@@ -30,15 +31,18 @@ export const getMessage = async () => {
 			options,
 		);
 		const data = await response.json();
+		// if there's a response, assign my message to input bubble, assign response to output bubble, reset state of textarea and submit button
 		if (data.choices[0].message.content) {
 			let previousValue = textarea.value;
 			input.textContent = previousValue;
+			output.innerHTML = data.choices[0].message.content.replace(
+				/\n/g,
+				'<br>',
+			);
 			textarea.value = '';
+			submitBtn.setAttribute('disabled', '');
+			submitBtn.classList.add('opacity-10');
 		}
-		output.innerHTML = data.choices[0].message.content.replace(
-			/\n/g,
-			'<br>',
-		);
 	} catch (error) {
 		console.error(error);
 	}
