@@ -2,11 +2,11 @@ import { config } from '../config';
 
 const API_KEY = config.API_KEY;
 const textarea = document.querySelector('textarea');
-const input = document.querySelector('#input');
-const output = document.querySelector('#output');
+const inputBubble = document.querySelector('#inputBubble');
+const outputBubble = document.querySelector('#outputBubble');
 const submitBtn = document.getElementById('submitBtn');
 
-export const getMessage = async () => {
+export const getResponse = async (callback) => {
 	const options = {
 		method: 'POST',
 		headers: {
@@ -31,14 +31,13 @@ export const getMessage = async () => {
 			options,
 		);
 		const data = await response.json();
-		// if there's a response, assign my message to input bubble, assign response to output bubble, reset state of textarea and submit button
+		// if there's a response, assign my question to input bubble, assign response to output bubble, save messages with callback, reset state of textarea and submit button
 		if (data.choices[0].message.content) {
-			let previousValue = textarea.value;
-			input.textContent = previousValue;
-			output.innerHTML = data.choices[0].message.content.replace(
-				/\n/g,
-				'<br>',
-			);
+			let question = textarea.value;
+			let answer = data.choices[0].message.content;
+			callback(question, answer);
+			inputBubble.textContent = question;
+			outputBubble.innerHTML = answer.replace(/\n/g, '<br>');
 			textarea.value = '';
 			submitBtn.setAttribute('disabled', '');
 			submitBtn.classList.add('opacity-10');

@@ -9,7 +9,8 @@
 
 	<body class="flex h-screen bg-neutral-800">
 		<aside class="z-50 hidden h-full">
-			<div class="h-full w-80 bg-neutral-900 p-4 text-neutral-50">
+			<div
+				class="flex h-full w-80 flex-col bg-neutral-900 p-4 text-neutral-50">
 				<div class="flex justify-between">
 					<div class="flex items-center">
 						<div
@@ -42,6 +43,8 @@
 						</svg>
 					</button>
 				</div>
+
+				<div class="history"></div>
 			</div>
 		</aside>
 
@@ -86,6 +89,8 @@
 						</svg>
 					</button>
 				</div>
+
+				<div class="history"></div>
 			</div>
 
 			<div
@@ -224,7 +229,7 @@
 						</div>
 						<h3 class="px-4">You</h3>
 					</div>
-					<p class="mb-10 px-12" id="input"></p>
+					<p class="mb-10 px-12" id="inputBubble"></p>
 				</div>
 
 				<div
@@ -246,7 +251,7 @@
 						</div>
 						<h3 class="px-4">MyGPT</h3>
 					</div>
-					<p class="px-12" id="output"></p>
+					<p class="px-12" id="outputBubble"></p>
 				</div>
 			</main>
 
