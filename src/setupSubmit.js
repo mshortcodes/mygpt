@@ -10,17 +10,28 @@ const historyDivs = document.querySelectorAll('.history');
 
 let messages = [];
 
-// clear previous history, create new history
-const createHistory = () => {
+// clear previous history
+const clearHistory = () => {
 	historyDivs.forEach((historyDiv) => {
 		historyDiv.innerHTML = '';
 	});
+};
 
+// call clearHistory, create new list items, style list items, add new history items
+const addHistoryItems = () => {
+	clearHistory();
 	messages.forEach((message) => {
 		historyDivs.forEach((historyDiv) => {
-			let historyItem = document.createElement('p');
-			historyItem.textContent = message.question;
-			historyDiv.appendChild(historyItem);
+			const historyElement = document.createElement('li');
+			historyElement.classList.add(
+				'cursor-pointer',
+				'truncate',
+				'rounded-lg',
+				'p-2',
+				'hover:bg-neutral-800',
+			);
+			historyElement.innerText = message.question;
+			historyDiv.appendChild(historyElement);
 		});
 	});
 };
@@ -28,8 +39,7 @@ const createHistory = () => {
 // callback for getResponse to store messages
 const saveMessage = (question, answer) => {
 	messages.push({ question: question, answer: answer });
-	console.log(messages);
-	createHistory();
+	addHistoryItems();
 };
 
 // check if there's an input value, hide logo, hide h2, align items to top, display bubbles, fetch data, create history

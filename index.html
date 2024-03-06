@@ -11,7 +11,8 @@
 		<aside class="z-50 hidden h-full">
 			<div
 				class="flex h-full w-80 flex-col bg-neutral-900 p-4 text-neutral-50">
-				<div class="flex justify-between">
+				<div
+					class="refresh flex cursor-pointer justify-between rounded-lg p-2 hover:bg-neutral-800">
 					<div class="flex items-center">
 						<div
 							class="flex h-10 w-10 justify-center rounded-full bg-neutral-50">
@@ -44,7 +45,9 @@
 					</button>
 				</div>
 
-				<div class="history"></div>
+				<div class="text-lg">
+					<ol class="history"></ol>
+				</div>
 			</div>
 		</aside>
 
@@ -54,9 +57,10 @@
 			class="absolute left-0 top-0 z-50 flex h-full w-full md:hidden"
 			id="mobileSidebar">
 			<div
-				class="flex h-full w-80 flex-col bg-neutral-900 p-4 text-neutral-50">
-				<div class="flex justify-between">
-					<div class="flex items-center">
+				class="flex h-full w-3/5 flex-col bg-neutral-900 p-4 text-neutral-50">
+				<div
+					class="refresh flex cursor-pointer justify-between rounded-lg p-2 hover:bg-neutral-800">
+					<div class="flex items-center overflow-hidden">
 						<div
 							class="flex h-10 w-10 flex-shrink-0 justify-center rounded-full bg-neutral-50">
 							<svg
@@ -71,9 +75,7 @@
 									fill="currentColor"></path>
 							</svg>
 						</div>
-						<p class="whitespace-nowrap p-2 text-lg font-medium">
-							New chat
-						</p>
+						<p class="truncate p-2 text-lg font-medium">New chat</p>
 					</div>
 					<button aria-label="new chat button" class="p-2">
 						<svg
@@ -90,7 +92,9 @@
 					</button>
 				</div>
 
-				<div class="history"></div>
+				<div class="text-lg">
+					<ol class="history"></ol>
+				</div>
 			</div>
 
 			<div
@@ -143,7 +147,7 @@
 				<button
 					id="newChatBtn"
 					aria-label="new chat button"
-					class="rounded-xl border-neutral-600 p-2 md:order-1 md:ml-2 md:border">
+					class="refresh rounded-xl border-neutral-600 p-2 md:order-1 md:ml-2 md:border">
 					<svg
 						class="w-8 text-neutral-50 md:w-6"
 						viewBox="0 0 24 24"

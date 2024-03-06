@@ -6,6 +6,15 @@ const inputBubble = document.querySelector('#inputBubble');
 const outputBubble = document.querySelector('#outputBubble');
 const submitBtn = document.getElementById('submitBtn');
 
+// assign my question to input bubble, assign response to output bubble, reset state of textarea and submit button
+const handleResponse = (question, answer) => {
+	inputBubble.textContent = question;
+	outputBubble.innerHTML = answer.replace(/\n/g, '<br>');
+	textarea.value = '';
+	submitBtn.setAttribute('disabled', '');
+	submitBtn.classList.add('opacity-10');
+};
+
 export const getResponse = async (callback) => {
 	const options = {
 		method: 'POST',
@@ -31,16 +40,12 @@ export const getResponse = async (callback) => {
 			options,
 		);
 		const data = await response.json();
-		// if there's a response, assign my question to input bubble, assign response to output bubble, save messages with callback, reset state of textarea and submit button
+		// create variables with my question and answer, save messages with callback
 		if (data.choices[0].message.content) {
 			let question = textarea.value;
 			let answer = data.choices[0].message.content;
 			callback(question, answer);
-			inputBubble.textContent = question;
-			outputBubble.innerHTML = answer.replace(/\n/g, '<br>');
-			textarea.value = '';
-			submitBtn.setAttribute('disabled', '');
-			submitBtn.classList.add('opacity-10');
+			handleResponse(question, answer);
 		}
 	} catch (error) {
 		console.error(error);
