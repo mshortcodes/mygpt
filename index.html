@@ -12,7 +12,7 @@
 			<div
 				class="flex h-full w-80 flex-col bg-neutral-900 p-4 text-neutral-50">
 				<div
-					class="refresh flex cursor-pointer justify-between rounded-lg p-2 hover:bg-neutral-800">
+					class="refresh mb-4 flex cursor-pointer justify-between rounded-lg p-2 hover:bg-neutral-800">
 					<div class="flex items-center">
 						<div
 							class="flex h-10 w-10 justify-center rounded-full bg-neutral-50">
@@ -57,9 +57,9 @@
 			class="absolute left-0 top-0 z-50 flex h-full w-full md:hidden"
 			id="mobileSidebar">
 			<div
-				class="flex h-full w-3/5 flex-col bg-neutral-900 p-4 text-neutral-50">
+				class="flex h-full w-80 flex-col bg-neutral-900 p-4 text-neutral-50">
 				<div
-					class="refresh flex cursor-pointer justify-between rounded-lg p-2 hover:bg-neutral-800">
+					class="refresh mb-4 flex cursor-pointer justify-between rounded-lg p-2 hover:bg-neutral-800">
 					<div class="flex items-center overflow-hidden">
 						<div
 							class="flex h-10 w-10 flex-shrink-0 justify-center rounded-full bg-neutral-50">
@@ -98,7 +98,7 @@
 			</div>
 
 			<div
-				class="h-full flex-shrink flex-grow p-4"
+				class="h-full flex-shrink flex-grow p-6"
 				id="closeMobileSidebarDiv">
 				<button class="p-2" id="closeMobileSidebarBtn">
 					<svg
@@ -121,7 +121,7 @@
 
 		<div class="flex h-full flex-1 flex-col bg-neutral-800">
 			<header
-				class="sticky top-0 z-40 flex items-center justify-between border-b border-neutral-600 p-2 md:justify-normal md:border-none">
+				class="sticky top-0 z-40 mb-2 flex items-center justify-between border-b border-neutral-600 px-2 py-4 md:justify-normal md:border-none">
 				<button
 					class="p-2 md:hidden"
 					id="openMobileSidebarBtn"
@@ -231,7 +231,7 @@
 									d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
 							</svg>
 						</div>
-						<h3 class="px-4">You</h3>
+						<h3 class="px-4 font-semibold">You</h3>
 					</div>
 					<p class="mb-10 px-12" id="inputBubble"></p>
 				</div>
@@ -253,7 +253,7 @@
 									fill="currentColor"></path>
 							</svg>
 						</div>
-						<h3 class="px-4">MyGPT</h3>
+						<h3 class="px-4 font-semibold">MyGPT</h3>
 					</div>
 					<p class="px-12" id="outputBubble"></p>
 				</div>

@@ -7,6 +7,8 @@ const textarea = document.querySelector('textarea');
 const main = document.querySelector('main');
 const bubbles = document.querySelectorAll('.bubble');
 const historyDivs = document.querySelectorAll('.history');
+const inputBubble = document.querySelector('#inputBubble');
+const outputBubble = document.querySelector('#outputBubble');
 
 let messages = [];
 
@@ -17,7 +19,7 @@ const clearHistory = () => {
 	});
 };
 
-// call clearHistory, create new list items, style list items, add new history items
+// call clearHistory, create new list items, style list items, add new history items, add event listener to replace input/output bubbles with history
 const addHistoryItems = () => {
 	clearHistory();
 	messages.forEach((message) => {
@@ -32,6 +34,11 @@ const addHistoryItems = () => {
 			);
 			historyElement.innerText = message.question;
 			historyDiv.appendChild(historyElement);
+
+			historyElement.addEventListener('click', () => {
+				inputBubble.innerText = message.question;
+				outputBubble.innerText = message.answer;
+			});
 		});
 	});
 };
