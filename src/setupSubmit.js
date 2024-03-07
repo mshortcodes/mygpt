@@ -1,4 +1,5 @@
 import { getResponse } from './getResponse';
+import { clickCards } from './clickCards';
 
 const mainLogo = document.getElementById('mainLogo');
 const h2 = document.querySelector('h2');
@@ -9,6 +10,7 @@ const bubbles = document.querySelectorAll('.bubble');
 const historyDivs = document.querySelectorAll('.history');
 const inputBubble = document.querySelector('#inputBubble');
 const outputBubble = document.querySelector('#outputBubble');
+const cards = document.querySelector('#cards');
 
 let messages = [];
 
@@ -49,23 +51,24 @@ const saveMessage = (question, answer) => {
 	addHistoryItems();
 };
 
-// check if there's an input value, hide logo, hide h2, align items to top, display bubbles, fetch data, create history
+// check if there's an input value, hide logo, hide h2, hide cards, align items to top, display bubbles, fetch data, create history
+const handleSubmit = () => {
+	if (textarea.value.trim()) {
+		mainLogo.classList.remove('flex');
+		mainLogo.classList.add('hidden');
+		h2.classList.add('hidden');
+		cards.classList.add('hidden');
+		main.classList.remove('justify-center');
+		bubbles.forEach((bubble) => {
+			bubble.classList.remove('hidden');
+			console.log('clicked');
+		});
+
+		getResponse(saveMessage);
+	}
+};
+
 export const setupSubmit = () => {
-	const handleSubmit = () => {
-		if (textarea.value.trim()) {
-			mainLogo.classList.remove('flex');
-			mainLogo.classList.add('hidden');
-			h2.classList.add('hidden');
-			main.classList.remove('justify-center');
-			bubbles.forEach((bubble) => {
-				bubble.classList.remove('hidden');
-				console.log('clicked');
-			});
-
-			getResponse(saveMessage);
-		}
-	};
-
 	submitBtn.addEventListener('click', handleSubmit);
 
 	// prevent enter from adding new line in textarea
@@ -75,6 +78,8 @@ export const setupSubmit = () => {
 			handleSubmit();
 		}
 	});
+
+	clickCards(handleSubmit);
 
 	// toggle disabled button and handle button opacity
 	textarea.addEventListener('input', () => {

@@ -1,3 +1,4 @@
+// setup clear chat buttons by adding refresh
 const refreshButtons = document.querySelectorAll('.refresh');
 
 export const refreshPage = () => {
