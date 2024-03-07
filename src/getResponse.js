@@ -30,7 +30,7 @@ export const getResponse = async (callback) => {
 					content: textarea.value,
 				},
 			],
-			max_tokens: 100,
+			max_tokens: 1000,
 		}),
 	};
 
