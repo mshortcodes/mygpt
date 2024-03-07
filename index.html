@@ -121,7 +121,7 @@
 
 		<!-- End of mobile sidebar -->
 
-		<div class="flex h-full flex-1 flex-col bg-neutral-800">
+		<div class="relative flex h-full flex-1 flex-col bg-neutral-800">
 			<header
 				class="sticky top-0 z-40 mb-4 flex items-center justify-between border-b border-neutral-600 px-2 py-4 md:justify-normal md:border-none">
 				<button
@@ -175,8 +175,36 @@
 				</button>
 			</header>
 
-			<main
-				class="relative flex flex-1 flex-col items-center justify-center">
+			<div
+				class="absolute left-0 top-1/2 hidden -translate-y-1/2 p-4 md:flex">
+				<button id="openSidebarBtn" aria-label="open sidebar button">
+					<svg
+						class="w-4 text-neutral-400"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 320 512"
+						fill="currentColor">
+						<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+						<path
+							d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+					</svg>
+				</button>
+				<button
+					class="hidden"
+					id="closeSidebarBtn"
+					aria-label="close sidebar button">
+					<svg
+						class="w-4 text-neutral-400"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 320 512"
+						fill="currentColor">
+						<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+						<path
+							d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+					</svg>
+				</button>
+			</div>
+
+			<main class="flex flex-1 flex-col items-center justify-center">
 				<div
 					id="mainLogo"
 					class="flex h-16 w-16 justify-center rounded-full bg-neutral-50">
@@ -197,37 +225,6 @@
 					class="p-4 text-center text-4xl font-semibold text-neutral-50 md:px-16">
 					How can I help you today?
 				</h2>
-
-				<div
-					class="absolute left-0 top-1/2 hidden -translate-y-1/2 p-4 md:flex">
-					<button
-						id="openSidebarBtn"
-						aria-label="open sidebar button">
-						<svg
-							class="w-4 text-neutral-400"
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 320 512"
-							fill="currentColor">
-							<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-							<path
-								d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
-						</svg>
-					</button>
-					<button
-						class="hidden"
-						id="closeSidebarBtn"
-						aria-label="close sidebar button">
-						<svg
-							class="w-4 text-neutral-400"
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 320 512"
-							fill="currentColor">
-							<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-							<path
-								d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
-						</svg>
-					</button>
-				</div>
 
 				<div
 					class="bubble mx-auto hidden w-full px-4 text-lg text-neutral-50 md:w-11/12 lg:w-3/4 xl:w-3/5">
