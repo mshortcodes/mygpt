@@ -8,7 +8,7 @@ const submitBtn = document.getElementById('submitBtn');
 
 // assign my question to input bubble, assign response to output bubble, reset state of textarea and submit button
 const handleResponse = (question, answer) => {
-	inputBubble.textContent = question;
+	inputBubble.innerText = question;
 	outputBubble.innerHTML = answer.replace(/\n/g, '<br>');
 	textarea.value = '';
 	submitBtn.setAttribute('disabled', '');
