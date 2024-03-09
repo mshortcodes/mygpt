@@ -17,7 +17,7 @@
 
 # About
 
-Since I use ChatGPT nearly everyday, I thought it would be relevant and fun to create a clone. I also wanted more practice with data fetching. MyGPT uses the OpenAI API for chat completion. Longer responses may be truncated due to token limit.
+Since I use ChatGPT nearly everyday, I thought it would be relevant and fun to create a clone. I also wanted more practice with data fetching and implementing a given design. MyGPT uses the OpenAI API for chat completion. Longer responses may be truncated due to token limit.
 
 <img src='./public/readme-images/home.png' alt='home page' />
 
