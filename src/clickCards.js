@@ -1,7 +1,7 @@
-const card1 = document.querySelector('#card1');
-const card2 = document.querySelector('#card2');
-const card3 = document.querySelector('#card3');
-const card4 = document.querySelector('#card4');
+const card1 = document.getElementById('card1');
+const card2 = document.getElementById('card2');
+const card3 = document.getElementById('card3');
+const card4 = document.getElementById('card4');
 
 const textarea = document.querySelector('textarea');
 

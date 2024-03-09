@@ -2,8 +2,8 @@ import { config } from '../config';
 
 const API_KEY = config.API_KEY;
 const textarea = document.querySelector('textarea');
-const inputBubble = document.querySelector('#inputBubble');
-const outputBubble = document.querySelector('#outputBubble');
+const inputBubble = document.getElementById('inputBubble');
+const outputBubble = document.getElementById('outputBubble');
 const submitBtn = document.getElementById('submitBtn');
 
 // assign my question to input bubble, assign response to output bubble, reset state of textarea and submit button

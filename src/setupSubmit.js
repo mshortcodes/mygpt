@@ -8,9 +8,9 @@ const textarea = document.querySelector('textarea');
 const main = document.querySelector('main');
 const bubbles = document.querySelectorAll('.bubble');
 const historyDivs = document.querySelectorAll('.history');
-const inputBubble = document.querySelector('#inputBubble');
-const outputBubble = document.querySelector('#outputBubble');
-const cards = document.querySelector('#cards');
+const inputBubble = document.getElementById('inputBubble');
+const outputBubble = document.getElementById('outputBubble');
+const cards = document.getElementById('cards');
 
 let messages = [];
 

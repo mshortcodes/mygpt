@@ -14,7 +14,7 @@
 	<body class="flex h-screen bg-neutral-800">
 		<aside class="z-50 hidden h-full">
 			<div
-				class="flex h-full w-80 flex-col bg-neutral-900 p-4 text-neutral-50">
+				class="flex h-full w-80 flex-col overflow-auto bg-neutral-900 p-4 text-neutral-50">
 				<div
 					class="refresh mb-4 flex cursor-pointer justify-between rounded-lg p-2 hover:bg-neutral-800">
 					<div class="flex items-center">
@@ -58,10 +58,10 @@
 		<!-- Mobile sidebar -->
 
 		<div
-			class="absolute left-0 top-0 z-50 flex h-full w-full md:hidden"
+			class="absolute left-0 top-0 z-50 hidden h-full w-full md:hidden"
 			id="mobileSidebar">
 			<div
-				class="flex h-full w-80 flex-col bg-neutral-900 p-4 text-neutral-50">
+				class="flex h-full w-80 flex-col overflow-auto bg-neutral-900 p-4 text-neutral-50">
 				<div
 					class="refresh mb-4 flex cursor-pointer justify-between rounded-lg p-2 hover:bg-neutral-800">
 					<div class="flex items-center overflow-hidden">
@@ -125,7 +125,7 @@
 
 		<!-- End of mobile sidebar -->
 
-		<div class="relative flex h-full flex-1 flex-col bg-neutral-800">
+		<div class="flex h-full flex-1 flex-col overflow-auto">
 			<header
 				class="sticky top-0 z-40 mb-4 flex items-center justify-between border-b border-neutral-600 bg-neutral-800 px-2 py-4 md:justify-normal md:border-none">
 				<button
@@ -180,6 +180,7 @@
 			</header>
 
 			<div
+				id="sidebarBtnDiv"
 				class="absolute left-0 top-1/2 hidden -translate-y-1/2 p-4 md:flex">
 				<button id="openSidebarBtn" aria-label="open sidebar button">
 					<svg
