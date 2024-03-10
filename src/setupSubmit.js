@@ -11,6 +11,7 @@ const historyDivs = document.querySelectorAll('.history');
 const inputBubble = document.getElementById('inputBubble');
 const outputBubble = document.getElementById('outputBubble');
 const cards = document.getElementById('cards');
+const today = document.querySelectorAll('h5');
 
 let messages = [];
 
@@ -45,13 +46,24 @@ const addHistoryItems = () => {
 	});
 };
 
+// add today in history
+const addToday = () => {
+	today.forEach((today) => {
+		if (today.classList.contains('hidden')) {
+			today.classList.remove('hidden');
+		} else {
+			return;
+		}
+	});
+};
+
 // callback for getResponse to store messages
 const saveMessage = (question, answer) => {
 	messages.push({ question: question, answer: answer });
 	addHistoryItems();
 };
 
-// check if there's an input value, hide logo, hide h2, hide cards, align items to top, display bubbles, fetch data, create history
+// check if there's an input value, hide logo, hide h2, hide cards, align items to top, display bubbles, add today, fetch data, create history
 const handleSubmit = () => {
 	if (textarea.value.trim()) {
 		mainLogo.classList.remove('flex');
@@ -62,7 +74,7 @@ const handleSubmit = () => {
 		bubbles.forEach((bubble) => {
 			bubble.classList.remove('hidden');
 		});
-
+		addToday();
 		getResponse(saveMessage);
 	}
 };

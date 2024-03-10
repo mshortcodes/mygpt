@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+html {
 	scrollbar-width: thin;
 	scrollbar-color: #404040 transparent;
 }
