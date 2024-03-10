@@ -133,9 +133,8 @@ const handleSubmit = () => {
 		main.classList.remove('justify-center');
 		bubbles.forEach((bubble) => {
 			bubble.classList.remove('hidden');
-			console.log('clicked');
 		});
-
+		addToday();
 		getResponse(saveMessage);
 	}
 };
