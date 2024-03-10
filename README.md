@@ -8,14 +8,16 @@
     -   [Challenges](#challenges)
     -   [What I Learned](#what-i-learned)
 -   [Features](#features)
-    -   [Mobile Navigation](#mobile-navigation)
-    -   [Light/Dark Theme](#lightdark-theme)
+    -   [Randomized card suggestions](#randomized-card-suggestions)
+    -   [Dynamic UI](#dynamic-ui)
+    -   [Sidebar/chat history](#sidebarchat-history)
+    -   [Validation](#validation)
 -   [Getting Started](#getting-started)
     -   [Prerequisites](#prerequisites)
     -   [Installation](#installation)
 -   [Contact](#contact)
 
-# About
+## About
 
 Since I use ChatGPT nearly everyday, I thought it would be relevant and fun to create a clone. I also wanted more practice with data fetching and implementing a given design. MyGPT uses the OpenAI API for chat completion. Longer responses may be truncated due to token limit.
 
@@ -32,7 +34,33 @@ I built each component (header, sidebar, mobile sidebar, main, bubbles, cards, t
 
 ### Challenges
 
-One of the challenges for this project was getting the textarea to behave as intended. Instead of having the textarea use scrolling, the height will adjust dynamically based on the input. This function also resets the height to auto so that when text is removed, it will revert back to normal size. This gives a nice user experience when inputting their message.
+#### Layout/Sidebars
+
+The layout was trickier than I had expected despite ChatGPT looking simple at first glance.
+
+For larger devices I needed:
+
+-   a header that remained fixed as the user scrolled but adjusts to the sidebar when open
+-   a sidebar that opens/closes and also remains fixed
+-   a main, scrollable section that respected the width of the sidebar when open
+
+For smaller devices I needed:
+
+-   a header that remained fixed
+-   a sidebar that has an overlay effect
+-   clicking anywhere outside the sidebar closes the sidebar and this area should expand and shrink
+
+This took a lot of trial and error and testing how elements behaved on different screen sizes. I also had to consider longer responses when the page was scrollable.
+
+I decided to make the body element flex, so that it essentially just has two direct children. This way I could make the 'main' area to the right use the flex-grow and flex-shrink properties. This allows it to expand when the sidebar is closed, and contract when it is open.
+
+I made the header sticky so it sticks to the top of the viewport and gave it a high z-index so it covers other content. The mobile sidebar has an even higher z-index so that it covers the header, as well as an 'invisible' div where if you click anywhere it will close the sidebar. This div also uses flex-grow/shrink to take up as much space as there is available, while also shrinking before the sidebar does. I decreased the background opacity so that when the sidebar is open, other content appears dimmed.
+
+<img src='./public/readme-images/mobile-sidebar.png' alt='mobile sidebar' />
+
+#### Textarea
+
+Another challenge for this project was getting the textarea to behave as intended. Instead of having the textarea use scrolling, the height will adjust dynamically based on the input. This function also resets the height to auto so that when text is removed, it will revert back to normal size. This gives a nice user experience when inputting their message.
 
 ```js
 export const textareaHeight = () => {
@@ -47,21 +75,18 @@ export const textareaHeight = () => {
 
 ### What I Learned
 
-This was my first time using local storage to save data on the user's preference for the theme. When the page is refreshed, the light and dark theme should render based off the previous visit rather than defaulting to one.
-
-I worked a lot with conditional rendering with some elements having a default display of none, but when some condition is met they will render. For example, when hovering over the projects the buttons will appear.
-
-As for more specifics, I learned about scroll-padding, window.scroll(), the window resize event listener, overflow-y, and using a boolean toggle for the mobile navigation. I also feel more proficient with Tailwind, media queries, and the overall process of developing one component at a time, mobile-first.
+This project helped me learn a bit more about asynchronous vs. synchronous programming, layouts, positions, and creating sidebars. I am still not fully confident in my understanding of promises and usage of async/await, but I think with repeated exposure I can get there. I often have to read, watch, and practice things many times before they completely click and digest with me. I did learn more about how JavaScript is single-threaded and more about callbacks.
 
 Concepts learned/practiced:
 
+-   data fetching
+-   creating sidebars
+-   dynamic UI
 -   responsive design
--   local storage
--   light/dark theme toggle
--   mobile navigation
--   event listeners, handlers, toggles
+-   DOM manipulation
+-   conditional rendering
 
-# Features
+## Features
 
 ### Randomized card suggestions
 
@@ -140,9 +165,23 @@ Features:
 -   Sidebar toggle with chevrons
 -   Clicking anywhere outside the mobile sidebar will close it
 
-### Textarea validation
+### Validation
 
-# Getting Started
+I implemented some basic validation just to make sure no empty values can be submitted. Surprisingly, you can do just this on ChatGPT by pressing enter in the textarea twice. I disabled the default behavior of the enter key to prevent extra empty space from being created, as well as checked for a truthy value (any text). I made the submit button disabled by default and gave it a low opacity. When there is an input, it will have its full opacity.
+
+```js
+textarea.addEventListener('input', () => {
+	if (textarea.value.trim()) {
+		submitBtn.removeAttribute('disabled');
+		submitBtn.classList.remove('opacity-10');
+	} else {
+		submitBtn.setAttribute('disabled', '');
+		submitBtn.classList.add('opacity-10');
+	}
+});
+```
+
+## Getting Started
 
 ### Prerequisites
 
@@ -177,7 +216,7 @@ npm install
 npm run dev
 ```
 
-# Contact
+## Contact
 
 Michael Short - mshortcodes@gmail.com
 
