@@ -1,12 +1,10 @@
-import { config } from '../config';
-
-const API_KEY = config.API_KEY;
+const API_KEY = import.meta.env.VITE_OPENAI_API;
 const textarea = document.querySelector('textarea');
 const inputBubble = document.getElementById('inputBubble');
 const outputBubble = document.getElementById('outputBubble');
 const submitBtn = document.getElementById('submitBtn');
 
-// assign my question to input bubble, assign response to output bubble, reset state of textarea and submit button
+// assign question to input bubble, assign response to output bubble, reset state of textarea and submit button
 const handleResponse = (question, answer) => {
 	inputBubble.innerText = question;
 	outputBubble.innerHTML = answer.replace(/\n/g, '<br>');
