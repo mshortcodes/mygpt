@@ -219,4 +219,4 @@ npm run dev
 
 Michael Short - mshortcodes@gmail.com
 
-Project link:
+Project link: https://mygptclone.vercel.app/
